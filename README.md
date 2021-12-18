@@ -198,9 +198,9 @@ void SpreadSheet::setupMainWidget()
 ```
    #### the second "createActions()":
    where we create the action for each one using 
-   "nameAction = new QAction(ActionIcone, "&Action", this)" , if we want add icons for our actions we use
-   "QPixmap ActionIcone(":/new_file.png")" , also we can add shortCut by
-   "ActionIcone->setShortcut(tr("Ctrl+alphabet"))":
+   `nameAction = new QAction(ActionIcone, "&Action", this)` , if we want add icons for our actions we use
+`QPixmap ActionIcone(":/new_file.png")` , also we can add shortCut by
+`ActionIcone->setShortcut(tr("Ctrl+alphabet"))`:
    
 ```c++
 void SpreadSheet::createActions()
@@ -285,9 +285,9 @@ void SpreadSheet::createActions()
 ```
   #### The fourth is "createMenus()":
 here we add Menus ,we have 5 Name menus "File", "Edit" ,"Toosl", "Optins", "Help"  by 
-"NameMenu = menuBar()->addMenu("&Name")"
+`NameMenu = menuBar()->addMenu("&Name")`
 and we add actions by using 
-"NameMenu->addAction(action)":
+`NameMenu->addAction(action)`:
 
 ```c++
 void SpreadSheet::createMenus()
