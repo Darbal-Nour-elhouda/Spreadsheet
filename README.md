@@ -380,12 +380,13 @@ void SpreadSheet::updateStatusBar(int row, int col)
    cellLocation->setText(cell.arg(row+1).arg(col+1));
 
 }
+```
 The result:
 <p align="center">
      <img src="images/updateStatusBar.png">
    </p>
 
-```
+
 In the end off the functions mentionned before we find the important one the :
   ####  "makeConnexion()":
  here we make connexion of the chane of any element in the spreadsheet with the update status barby using
