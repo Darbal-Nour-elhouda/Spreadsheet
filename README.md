@@ -22,11 +22,10 @@
 </details>
 
 - # [Introduction]
-
-<p align="center">
-     <img src="images/Network-arch.png">
-   </p>
 Spreadsheets are computer applications used to store, analyze, organize and manipulate data in the rows and columns of a grid. The program operates by taking in data, which can be numbers or text, into the cells of tables.
+<p align="center">
+     <img src="images/example1.gif">
+   </p>
 
 - # [Functionality]
 
