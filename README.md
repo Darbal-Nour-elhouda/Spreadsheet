@@ -33,7 +33,7 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
  -Two tools bars
  -Status bar to print the informations
  
-the application looks like that :
+##**the application looks like that :**
 <p align="center">
      <img src="images/logo.png">
    </p>
