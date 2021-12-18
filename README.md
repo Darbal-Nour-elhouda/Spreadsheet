@@ -149,37 +149,36 @@ private:
 ```
 
 - # [SpreedSheet CPP](#spreedsheet-cpp)
-- we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
+
+  we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
   ```c++ 
-    //Seting the spreadsheet
+  //Seting the spreadsheet
+  setupMainWidget();
 
-    setupMainWidget();
+  // Creaeting Actions
+  createActions();
 
-    // Creaeting Actions
-    createActions();
-
-    // Creating Menus
-    createMenus();
-
-
-    //Creating the tool bar
-    createToolBars();
-
-    //making the connexions
-    makeConnexions();
+  // Creating Menus
+  createMenus();
 
 
-    //Creating the labels for the status bar (should be in its proper function)
-    cellLocation = new QLabel("(1, 1)");
-    cellFormula = new QLabel("");
-    statusBar()->addPermanentWidget(cellLocation);
-    statusBar()->addPermanentWidget(cellFormula);
+  //Creating the tool bar
+  createToolBars();
 
-    //initier le nom du fichier courant
-    currentFile = nullptr;
-    //mettre le nom de spreedsheet
-    setWindowTitle("Buffer");
+  //making the connexions
+  makeConnexions();
+
+  //Creating the labels for the status bar (should be in its proper function)
+  cellLocation = new QLabel("(1, 1)");
+  cellFormula = new QLabel("");
+  statusBar()->addPermanentWidget(cellLocation);
+  statusBar()->addPermanentWidget(cellFormula);
+
+  //initier le nom du fichier courant
+  currentFile = nullptr;
+  //mettre le nom de spreedsheet
+  setWindowTitle("Buffer");
 
 ```
 
