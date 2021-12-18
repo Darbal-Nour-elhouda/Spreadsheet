@@ -29,30 +29,40 @@
 
 # Functionality
 
-**Setup ISC DHCP server**
-First we install the DHCP server.
+>
 
-## Installing the DHCP server
-`sudo apt-get install isc-dhcp-server`
+- ## [SpreedSheet Header](#spreedsheet-header)
+   - ### [Protected Functions](#protected-functions)
+   - ### [Private Slots](#private-slots)
+   - ### [Pointers](#pointers)
+- ## [SpreedSheet CPP](#spreedsheet-cpp)
 
-<!-- DHCP configuration -->
-# SpreedSheet Header
 
-### Network architecture DHCP
-
-<p align="center">
-     <img src="images/DHCP-arch.png">
-   </p>
-   
-## SpreedSheet ;cpp
-First we have to define for which network interface the ISC DHCP server should work. To do this, we open the following configuration file.
-
+## SpreedSheet Header
 `sudo nano /etc/default/isc-dhcp-server`
 
-Here we add the interface name in the line provided. Here we choose “eth1”. Depending on the application, it can also be “wlan0”.
-```sh
-INTERFACESv4="eth1"
-INTERFACESv6=""
+```#ifndef SPREADSHEET_H
+#define SPREADSHEET_H
+
+#include <QMainWindow>
+#include <QTableWidget>
+#include <QAction>
+#include <QMenu>
+#include <QToolBar>
+#include <QLabel>
+#include <QStatusBar>
+#include "gocell.h"
+#include "finddialog.h"
+#include<QFileDialog>
+#include<QTextStream>
+
+class SpreadSheet : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    SpreadSheet(QWidget *parent = nullptr);
+    ~SpreadSheet();
 ```
 ### Subnets declaration
 `sudo nano /etc/dhcp/dhcpd.conf`
