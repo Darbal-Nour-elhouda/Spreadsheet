@@ -31,14 +31,14 @@
 
 >
 
--## SpreedSheet Header(#spreedsheet-header)
+-## [SpreedSheet Header](#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
    - ### [Private Slots](#private-slots)
    - ### [Pointers](#pointers)
--## SpreedSheet CPP(#spreedsheet-cpp)
+-## [SpreedSheet CPP](#spreedsheet-cpp)
 
 
-## SpreedSheet Header
+## SpreedSheet Header:
 
 ```c++
 #ifndef SPREADSHEET_H
@@ -64,7 +64,7 @@ public:
     SpreadSheet(QWidget *parent = nullptr);
     ~SpreadSheet();
 ```
-## Protected Functions
+## Protected Functions:
 ```c++
 protected:
     void setupMainWidget();
@@ -72,4 +72,67 @@ protected:
     void createMenus();
     void createToolBars();
     void makeConnexions();
+```
+## Private Slots:
+```c++
+private slots:
+    void close();
+    void updateStatusBar(int, int); //Respond for the call changed
+    void goCellSlot();
+    void findSlot();
+    void deleteslot();
+    void saveSlot();//slot pour repondre a l appel save
+    void loadslot();//slot pour repondre a l appel load
+```
+## Pointers:
+```c++
+//Pointers
+    void saveContent(QString filename);//methode pour sauvegarder le contenu
+    void loadContent(QString filename);
+
+private:
+
+    // --------------- Central Widget -------------//
+    QTableWidget *spreadsheet;
+    // --------------- Actions       --------------//
+    QAction * newFile;
+    QAction * open;
+    QAction * save;
+    QAction * saveAs;
+    QAction * exit;
+    QAction *cut;
+    QAction *copy;
+    QAction *paste;
+    QAction *deleteAction;
+    QAction *find;
+    QAction *row;
+    QAction *Column;
+    QAction *all;
+    QAction *goCell;
+    QAction*findDialog;
+    QAction *recalculate;
+    QAction *sort;
+    QAction *showGrid;
+    QAction *auto_recalculate;
+    QAction *about;
+    QAction *aboutQt;
+
+
+    // ---------- Menus ----------
+    QMenu *FileMenu;
+    QMenu *editMenu;
+    QMenu *toolsMenu;
+    QMenu *optionsMenu;
+    QMenu *helpMenu;
+
+
+    //  ----- - Widget pouyr la bare d'etat
+    QLabel *cellLocation;  //position de la cellule active
+    QLabel *cellFormula;   // Formuel de la cellue active
+    //-------- Nom de fichier courant
+    QString * currentFile;
+
+};
+
+#endif // SPREADSHEET_H
 ```
