@@ -149,7 +149,7 @@ private:
 #endif // SPREADSHEET_H
 ```
 
--## [SpreedSheet CPP](#spreedsheet-cpp)
+- ## [SpreedSheet Cpp](#spreedsheet-cpp)
 
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
@@ -184,7 +184,8 @@ setWindowTitle("Buffer");
 ```
  ### Functions:
 Now, it's necessary to implement the functions mentioned before:
-   -The first "setupMainWidget()":
+
+   #### The first "setupMainWidget()":
 ```c++
 void SpreadSheet::setupMainWidget()
 {
@@ -195,7 +196,7 @@ void SpreadSheet::setupMainWidget()
 
 }
 ```
-   -the second "createActions()":
+   #### the second "createActions()":
 ```c++
 void SpreadSheet::createActions()
 {
@@ -275,15 +276,6 @@ void SpreadSheet::createActions()
    QPixmap exitIcon(":/quit_icon.png");
    exit = new QAction(exitIcon,"E&xit", this);
    exit->setShortcut(tr("Ctrl+Q"));
-}
-
-void SpreadSheet::close()
-{
-
-    auto reply = QMessageBox::question(this, "Exit",
-                                       "Do you really want to quit?");
-    if(reply == QMessageBox::Yes)
-        qApp->exit();
 }
 ```
 
