@@ -15,9 +15,9 @@
   <summary>Table of Contents</summary>
   <ol>
         <li><a href="#Introduction">introduction</a></li>
-        <li><a href="#Part-I">Functionality</a></li>
-        <li><a href="#Part-II">SpreedSheet Header</a></li>
-        <li><a href="#Part-III">SpreedSheet cpp</a></li>
+        <li><a href="#Functionality">Functionality</a></li>
+        <li><a href="#SpreedSheet Header">SpreedSheet Header</a></li>
+        <li><a href="#SpreedSheet cpp">SpreedSheet cpp</a></li>
   </ol>
 </details>
 
@@ -27,7 +27,7 @@
      <img src="images/Network-arch.png">
    </p>
 
-# Part-I
+# Functionality
 
 **Setup ISC DHCP server**
 First we install the DHCP server.
@@ -36,7 +36,7 @@ First we install the DHCP server.
 `sudo apt-get install isc-dhcp-server`
 
 <!-- DHCP configuration -->
-# Part-II
+# SpreedSheet Header
 
 ### Network architecture DHCP
 
@@ -44,7 +44,7 @@ First we install the DHCP server.
      <img src="images/DHCP-arch.png">
    </p>
    
-## Configuring the DHCP server
+## SpreedSheet.cpp
 First we have to define for which network interface the ISC DHCP server should work. To do this, we open the following configuration file.
 
 `sudo nano /etc/default/isc-dhcp-server`
