@@ -337,9 +337,95 @@ void SpreadSheet::createMenus()
     helpMenu->addAction(about);
     helpMenu->addAction(aboutQt);
 }
-
-
 ```
+  #### The fifth one is "createToolBars()":
+where we create the toolbars by 
+`auto toolbarName = addToolBar("Name");` and we add for each one the actions by using
+`toolbarName->addAction(qction);`
+
+```c++
+void SpreadSheet::createToolBars()
+{
+
+    //Creer une bare d'outils
+    auto toolbar1 = addToolBar("File");
+
+
+    //Ajouter des actions acette bar
+    toolbar1->addAction(newFile);
+    toolbar1->addAction(save);
+    toolbar1->addSeparator();
+    toolbar1->addAction(exit);
+    
+
+
+    //Creer une autre tool bar
+    auto toolbar2  = addToolBar("ToolS");
+    toolbar2->addAction(goCell);
+    auto toolbar3  = addToolBar("ToolS");
+    toolbar3->addAction(find);
+}
+```
+   #### the sixth one is "updateStatusBar()":
+```c++
+void SpreadSheet::updateStatusBar(int row, int col)
+{
+    QString cell{"(%0, %1)"};
+   cellLocation->setText(cell.arg(row+1).arg(col+1));
+
+}
+```
+In the end if the functions mentionned before we find the important one :
+  #### the "makeConnexion()":
+ here we make connexion of the chane of any element in the spreadsheet with the update status barby using
+ `connect(action,&QAction::triggered,name,&QTableWidger::actionSlot)`
+ 
+ ```c++
+ void SpreadSheet::makeConnexions()
+{
+
+   // --------- Connexion for the  select all action ----/
+   connect(all, &QAction::triggered,
+           spreadsheet, &QTableWidget::selectAll);
+
+   // Connection for the  show grid
+   connect(showGrid, &QAction::triggered,
+           spreadsheet, &QTableWidget::setShowGrid);
+
+   //Connection for the exit button
+   connect(exit, &QAction::triggered, this, &SpreadSheet::close);
+
+
+   //connectting the chane of any element in the spreadsheet with the update status bar
+   connect(spreadsheet, &QTableWidget::cellClicked, this,  &SpreadSheet::updateStatusBar);
+
+   connect(goCell, &QAction::triggered, this, &SpreadSheet::goCellSlot);
+
+   connect(find, &QAction::triggered, this, &SpreadSheet::findSlot);
+
+   connect (open,&QAction::triggered, this, &SpreadSheet::loadslot);
+   //connection de save slot
+   connect(save, &QAction::triggered,this,&SpreadSheet::saveSlot);
+   //conncet del_slot
+   connect(deleteAction, &QAction::triggered, this, &SpreadSheet::deleteslot);
+}
+ ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Our Team -[DARBAL nour-elhouda](https://github.com/teamkhaoulanour) -[MZOUDI Khaoula](https://github.com/KhaoulaMzoudi)
 
