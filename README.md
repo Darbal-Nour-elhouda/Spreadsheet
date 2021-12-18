@@ -22,19 +22,20 @@
 </details>
 
 - # [Introduction]
+  -## [nour] 
 Spreadsheets are computer applications used to store, analyze, organize and manipulate data in the rows and columns of a grid. The program operates by taking in data, which can be numbers or text, into the cells of tables.
 <p align="center">
      <img src="images/example1.gif">
    </p>
 
-- # [Functionality]
+- # Functionality
 
 
-- ## [SpreedSheet Header](#spreedsheet-header)
+- # [SpreedSheet Header](#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
    - ### [Private Slots](#private-slots)
    - ### [Pointers](#pointers)
-- ## [SpreedSheet CPP](#spreedsheet-cpp)
+- # [SpreedSheet CPP](#spreedsheet-cpp)
 
 
 ## SpreedSheet Header:
