@@ -4,7 +4,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="images/spreedsheet icon.png" alt="Logo" width="500" height="400">
+    <img src="images/spreedsheet icon.jpg" alt="Logo" width="500" height="400">
   <h2 align="center">Project:</h2>
   <h3 align="center">SpreadSheet</h3>
 </div>
