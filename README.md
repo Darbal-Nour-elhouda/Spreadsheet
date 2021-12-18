@@ -15,7 +15,7 @@
   <summary>Table of Contents</summary>
   <ol>
         <li><a href="#Introduction">introduction</a></li>
-        <li><a href="#Functionality">Functionality</a></li>
+        <li><a href="#Features & Functionality">features and functionality</a></li>
         <li><a href="#SpreedSheet Header">SpreedSheet Header</a></li>
         <li><a href="#SpreedSheet cpp">SpreedSheet cpp</a></li>
   </ol>
@@ -28,7 +28,7 @@ Spreadsheets are computer applications used to store, analyze, organize and mani
      <img src="images/example1.gif">
    </p>
 
-- # Functionality
+- # [Features & Functionality](#features and functionality)
 
 
 - # [SpreedSheet Header](#spreedsheet-header)
