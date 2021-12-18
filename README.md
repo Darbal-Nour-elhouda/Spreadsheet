@@ -81,20 +81,7 @@ subnet 192.168.2.0 netmask 255.255.255.0
 `sudo nano /etc/network/interfaces`
 
 ```sh
-auto lo
-iface lo inet loopback
 
-allow-hotplug eth0
-iface eth0 inet static
-        address 10.1.1.1
-        gateway 10.1.1.1
-        network 10.1.1.0
-        netmask 255.255.255.0
-
-allow-hotplug eth1
-iface eth1 inet static
-        address 192.168.1.1
-        gateway 192.168.1.1
 ```
 ### firewall_disabled
 `sudo nano /etc/selinux/config`
