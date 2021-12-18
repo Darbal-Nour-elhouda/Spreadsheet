@@ -383,7 +383,7 @@ void SpreadSheet::updateStatusBar(int row, int col)
 ```
 The result:
 <p align="center">
-     <img src="images/updateStatusBar.png">
+     <img src="images/updateStatusBar1.png">
    </p>
 
 
