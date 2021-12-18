@@ -30,9 +30,12 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
 - # [Features & Functionality](#features-and-functionality)
 ##  **In our SpreadSheet we obtain an application with:**
 
- -Menu Bar
- -Two tools bars
- -Status bar to print the informations
+ -Menu Bar.
+ 
+ -Two tools bars.
+ 
+ -Status bar to print the informations.
+ 
  
 ## **the application looks like that :**
 <p align="center">
