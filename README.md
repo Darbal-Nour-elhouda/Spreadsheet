@@ -149,7 +149,7 @@ private:
 #endif // SPREADSHEET_H
 ```
 
--## SpreedSheet CPP(#spreedsheet-cpp)
+-## [SpreedSheet CPP](#spreedsheet-cpp)
 
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
@@ -182,11 +182,110 @@ currentFile = nullptr;
 setWindowTitle("Buffer");
 
 ```
--### [Functions]
+ ### Functions:
+Now, it's necessary to implement the functions mentioned before:
+   -The first "setupMainWidget()":
+```c++
+void SpreadSheet::setupMainWidget()
+{
+    spreadsheet = new QTableWidget;
+    spreadsheet->setRowCount(100);
+    spreadsheet->setColumnCount(10);
+    setCentralWidget(spreadsheet);
+
+}
+```
+   -the second "createActions()":
+```c++
+void SpreadSheet::createActions()
+{
+    // --------- New File -------------------
+   QPixmap newIcon(":/new_file.png");
+   newFile = new QAction(newIcon, "&New", this);
+   newFile->setShortcut(tr("Ctrl+N"));
+
+
+    // --------- open file -------------------
+   open = new QAction("&Open", this);
+   open->setShortcut(tr("Ctrl+O"));
+
+    // --------- open file -------------------
+   save = new QAction("&Save", this);
+   save->setShortcut(tr("Ctrl+S"));
+
+    // --------- open file -------------------
+   saveAs = new QAction("save &As", this);
+
+
+    // --------- open file -------------------
+   QPixmap cutIcon(":/cut_icon.png");
+   cut = new QAction(newIcon, "Cu&t", this);
+   cut->setShortcut(tr("Ctrl+X"));
+
+   // --------- Cut menu -----------------
+   copy = new QAction( "&Copy", this);
+   copy->setShortcut(tr("Ctrl+C"));
+
+
+   paste = new QAction( "&Paste", this);
+   paste->setShortcut(tr("Ctrl+V"));
+
+
+   deleteAction = new QAction( "&Delete", this);
+   deleteAction->setShortcut(tr("Del"));
+
+
+   row  = new QAction("&Row", this);
+   Column = new QAction("&Column", this);
+   all = new QAction("&All", this);
+   all->setShortcut(tr("Ctrl+A"));
 
 
 
+   QPixmap findIcon(":/search_icon.png"); find= new QAction(newIcon, "&Find", this);
+   find->setShortcut(tr("Ctrl+F"));
 
+   QPixmap goCellIcon(":/go_to_icon.png");
+   goCell = new QAction( goCellIcon, "&Go to Cell", this);
+   deleteAction->setShortcut(tr("f5"));
+
+
+   recalculate = new QAction("&Recalculate",this);
+   recalculate->setShortcut(tr("F9"));
+
+
+   sort = new QAction("&Sort");
+
+
+
+   showGrid = new QAction("&Show Grid");
+   showGrid->setCheckable(true);
+   showGrid->setChecked(spreadsheet->showGrid());
+
+   auto_recalculate = new QAction("&Auto-recalculate");
+   auto_recalculate->setCheckable(true);
+   auto_recalculate->setChecked(true);
+
+
+
+   about =  new QAction("&About");
+   aboutQt = new QAction("About &Qt");
+
+    // --------- exit -------------------
+   QPixmap exitIcon(":/quit_icon.png");
+   exit = new QAction(exitIcon,"E&xit", this);
+   exit->setShortcut(tr("Ctrl+Q"));
+}
+
+void SpreadSheet::close()
+{
+
+    auto reply = QMessageBox::question(this, "Exit",
+                                       "Do you really want to quit?");
+    if(reply == QMessageBox::Yes)
+        qApp->exit();
+}
+```
 
 Our Team -[DARBAL nour-elhouda](https://github.com/teamkhaoulanour) -[MZOUDI Khaoula](https://github.com/KhaoulaMzoudi)
 
