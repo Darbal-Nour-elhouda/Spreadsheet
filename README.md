@@ -5,8 +5,7 @@
 <br />
 <div align="center">
     <img src="images/spreedsheet icon.jpg" alt="Logo" width="500" height="400">
-  <h2 align="center">Project:</h2>
-  <h3 align="center">SpreadSheet</h3>
+  
 </div>
 
 
@@ -15,10 +14,10 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-        <li><a href="#Introduction">$$$$$$$e</a></li>
-        <li><a href="#Part-I">Part I : ******</a></li>
-        <li><a href="#Part-II">Part II : DHCP configuration</a></li>
-        <li><a href="#Part-III">Part III: µµµµµµµµ</a></li>
+        <li><a href="#Introduction">introduction</a></li>
+        <li><a href="#Part-I">Functionality</a></li>
+        <li><a href="#Part-II">SpreedSheet Header</a></li>
+        <li><a href="#Part-III">SpreedSheet cpp</a></li>
   </ol>
 </details>
 
