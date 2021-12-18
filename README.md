@@ -44,7 +44,7 @@ First we install the DHCP server.
      <img src="images/DHCP-arch.png">
    </p>
    
-## SpreedSheet.cpp
+## SpreedSheet ;cpp
 First we have to define for which network interface the ISC DHCP server should work. To do this, we open the following configuration file.
 
 `sudo nano /etc/default/isc-dhcp-server`
@@ -131,7 +131,7 @@ In case of error, the messages are unfortunately not always clear. Unless you ha
 
 
 <!-- Relay agent configuration -->
-# Part-III
+# SpreedSheet cpp
 
 ### Network architecture RELAY-AGENT
 
