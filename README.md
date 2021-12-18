@@ -289,6 +289,10 @@ here we add Menus ,we have 5 Name menus "File", "Edit" ,"Toosl", "Optins", "Help
 and we add actions by using 
 `NameMenu->addAction(action)`:
 
+<p align="center">
+     <img src="images/toolsbar.png">
+   </p>
+
 ```c++
 void SpreadSheet::createMenus()
 {
@@ -338,10 +342,11 @@ void SpreadSheet::createMenus()
     helpMenu->addAction(aboutQt);
 }
 ```
+
   #### The fifth one is "createToolBars()":
 where we create the toolbars by 
 `auto toolbarName = addToolBar("Name");` and we add for each one the actions by using
-`toolbarName->addAction(qction);`
+`toolbarName->addAction(action);`
 
 ```c++
 void SpreadSheet::createToolBars()
@@ -366,7 +371,8 @@ void SpreadSheet::createToolBars()
     toolbar3->addAction(find);
 }
 ```
-   #### the sixth one is "updateStatusBar()":
+   ##### "updateStatusBar()":
+This function is done just if a new cell has been selected in the toolbar.
 ```c++
 void SpreadSheet::updateStatusBar(int row, int col)
 {
@@ -374,9 +380,14 @@ void SpreadSheet::updateStatusBar(int row, int col)
    cellLocation->setText(cell.arg(row+1).arg(col+1));
 
 }
+The result:
+<p align="center">
+     <img src="images/updateStatusBar.png">
+   </p>
+
 ```
-In the end if the functions mentionned before we find the important one :
-  #### the "makeConnexion()":
+In the end off the functions mentionned before we find the important one the :
+  ####  "makeConnexion()":
  here we make connexion of the chane of any element in the spreadsheet with the update status barby using
  `connect(action,&QAction::triggered,name,&QTableWidger::actionSlot)`
  
@@ -410,7 +421,8 @@ In the end if the functions mentionned before we find the important one :
    connect(deleteAction, &QAction::triggered, this, &SpreadSheet::deleteslot);
 }
  ```
-
+Now we add the implementation of **the slots** :
+ #### 1 "goCellSlo
 
 
 
