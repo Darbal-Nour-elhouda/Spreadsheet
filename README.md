@@ -42,7 +42,7 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
      <img src="images/logo.png">
    </p>
 
-- # [SpreedSheet Header](#spreedsheet-header)
+   - ### [SpreedSheet Header](#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
    - ### [Private Slots](#private-slots)
    - ### [Pointers](#pointers)
@@ -148,9 +148,41 @@ private:
 #endif // SPREADSHEET_H
 ```
 - # [SpreedSheet CPP](#spreedsheet-cpp)
+- we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by "createActions()",after we create the tool bar by "createToolBars()" and we make connexions by "makeConnexions()", we create the labels for the status bar, besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
+  ```c++
+SpreadSheet::SpreadSheet(QWidget *parent)
+    : QMainWindow(parent)
+{
+    //Seting the spreadsheet
+
+    setupMainWidget();
+
+    // Creaeting Actions
+    createActions();
+
+    // Creating Menus
+    createMenus();
 
 
+    //Creating the tool bar
+    createToolBars();
 
+    //making the connexions
+    makeConnexions();
+
+
+    //Creating the labels for the status bar (should be in its proper function)
+    cellLocation = new QLabel("(1, 1)");
+    cellFormula = new QLabel("");
+    statusBar()->addPermanentWidget(cellLocation);
+    statusBar()->addPermanentWidget(cellFormula);
+
+    //initier le nom du fichier courant
+    currentFile = nullptr;
+    //mettre le nom de spreedsheet
+    setWindowTitle("Buffer");
+}
+```
 
 
 
@@ -161,6 +193,5 @@ Our Team -[DARBAL nour-elhouda](https://github.com/teamkhaoulanour) -[MZOUDI Kha
 Project Link: [SpreadSheet](https://github.com/Darbal-Nour-elhouda/Spreadsheet)
 
 Encadré par : [Mr.Belcaid Anass](https://)
-## Encadré par : [Hakima Bourzigui](https://)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
