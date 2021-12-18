@@ -22,14 +22,21 @@
 </details>
 
 - # [Introduction](#introduction)
-  
-Spreadsheets are computer applications used to store, analyze, organize and manipulate data in the rows and columns of a grid. The program operates by taking in data, which can be numbers or text, into the cells of tables.
+Spreadsheets are computer applications used to store, analyze, organize, and manipulate data in the rows and columns of a grid. The program works by inserting data, which can be numbers or text, into the cells of tables. most people think of spreadsheets, they think of data entry and simple calculations. But a modern spreadsheet is more than a financial tool. These apps are a robust way to help collect, organize and analyze important data across different areas of life ,& people use it because they are easy-to-read space.
 <p align="center">
      <img src="images/example1.gif">
    </p>
 
 - # [Features & Functionality](#features-and-functionality)
-
+In our SpreadSheet we obtain an application with:
+ -Menu Bar
+ -Two tools bars
+ -Status bar to print the informations
+ 
+the application looks like that :
+<p align="center">
+     <img src="images/logo.png">
+   </p>
 
 - # [SpreedSheet Header](#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
