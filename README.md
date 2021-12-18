@@ -211,9 +211,7 @@ If the command prompt returns without a message, then it worked.
 
 ### DHCP relay status
 
-If the start of the ISC DHCP relay was aborted with an error, then you should perform a status query to get to the bottom of the error.
 
-`sudo systemctl status isc-dhcp-relay`
 
 <p align="center">
      <img src="images/status-RELAY.png">
@@ -226,27 +224,9 @@ If the start of the ISC DHCP relay was aborted with an error, then you should pe
 <!-- Demonstration -->
 # Part-IV
 
-- Demonstrate the DHCP operating with a client and a server in the same
-network.
-
-Client1      | DHCP_config         | Routing      |
------------- | -------------| -------------|
-![Image client1](images/ipconfig_client1.png) | ![Image routing_dhcp](images/dhcp_config.png)| ![Image routing_dhcp](images/routing_dhcp.png)|
-
-- Demonstrate the DHCP operating with a client and a server in different
-networks.
-
-Client2      | RELAY_config         | Routing      |
------------- | -------------| -------------|
-![Image client2](images/ipconfig_client2.png) | ![Image routing_dhcp](images/relay_config.png)| ![Image routing_dhcp](images/relay_routing.png)|
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-Our Team - [AIT EL KADI Ilyas](https://github.com/IlyasKadi) - [AZIZ Oussama](https://github.com/ATAMAN0) - [DARBAL nour-elhouda](https://github.com/teamkhaoulanour) -[MZOUDI Khaoula](https://github.com/KhaoulaMzoudi)
-
-Project Link: [DHCP-Relay-Agent](https://github.com/IlyasKadi/DHCP-Relay-Agent)
-
-Encadré par : [Mme.TADIST Khawla](https://)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
