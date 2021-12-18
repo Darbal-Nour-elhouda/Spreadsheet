@@ -43,10 +43,10 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
    </p>
 
   - ## [SpreedSheet Header](#spreedsheet-header)
-   - ### [The header](#The-header)
-   - ### [Protected Functions](#protected-functions)
-   - ### [Private Slots](#private-slots)
-   - ### [Pointers](#pointers)
+    - ### [The header](#The-header)
+    - ### [Protected Functions](#protected-functions)
+    - ### [Private Slots](#private-slots)
+    - ### [Pointers](#pointers)
 
 
 
@@ -149,7 +149,7 @@ private:
 #endif // SPREADSHEET_H
 ```
 
--## [SpreedSheet CPP](#spreedsheet-cpp)
+-## SpreedSheet CPP(#spreedsheet-cpp)
 
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
@@ -182,6 +182,7 @@ currentFile = nullptr;
 setWindowTitle("Buffer");
 
 ```
+-### [Functions]
 
 
 
