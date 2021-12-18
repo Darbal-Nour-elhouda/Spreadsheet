@@ -197,8 +197,10 @@ void SpreadSheet::setupMainWidget()
 }
 ```
    #### the second "createActions()":
-   where we create the action for each one using "nameAction = new QAction(ActionIcone, "&Action", this)" , if we want add icons for our actions we use
-   "QPixmap ActionIcone(":/new_file.png")" , also we can add shortCut by  "ActionIcone->setShortcut(tr("Ctrl+alphabet"))":
+   where we create the action for each one using 
+   "nameAction = new QAction(ActionIcone, "&Action", this)" , if we want add icons for our actions we use
+   "QPixmap ActionIcone(":/new_file.png")" , also we can add shortCut by
+   "ActionIcone->setShortcut(tr("Ctrl+alphabet"))":
    
 ```c++
 void SpreadSheet::createActions()
@@ -283,7 +285,8 @@ void SpreadSheet::createActions()
 ```
   #### The fourth is "createMenus()":
 here we add Menus ,we have 5 Name menus "File", "Edit" ,"Toosl", "Optins", "Help"  by 
-"NameMenu = menuBar()->addMenu("&Name")" and we add actions by using 
+"NameMenu = menuBar()->addMenu("&Name")"
+and we add actions by using 
 "NameMenu->addAction(action)":
 
 ```c++
@@ -323,7 +326,7 @@ void SpreadSheet::createMenus()
 
 
 
-    //Optins menus
+    //--------------Optins menus-------------
     optionsMenu = menuBar()->addMenu("&Options");
     optionsMenu->addAction(showGrid);
     optionsMenu->addAction(auto_recalculate);
@@ -335,33 +338,6 @@ void SpreadSheet::createMenus()
     helpMenu->addAction(aboutQt);
 }
 
-void SpreadSheet::createToolBars()
-{
-
-    //Crer une bare d'outils
-    auto toolbar1 = addToolBar("File");
-
-
-    //Ajouter des actions acette bar
-    toolbar1->addAction(newFile);
-    toolbar1->addAction(save);
-    toolbar1->addSeparator();
-    toolbar1->addAction(exit);
-
-
-    //Creer une autre tool bar
-    auto toolbar2  = addToolBar("ToolS");
-    toolbar2->addAction(goCell);
-    auto toolbar3  = addToolBar("ToolS");
-    toolbar3->addAction(find);
-}
-
-void SpreadSheet::updateStatusBar(int row, int col)
-{
-    QString cell{"(%0, %1)"};
-   cellLocation->setText(cell.arg(row+1).arg(col+1));
-
-}
 
 ```
 
