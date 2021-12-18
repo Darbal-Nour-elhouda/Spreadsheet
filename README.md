@@ -21,16 +21,15 @@
   </ol>
 </details>
 
-# Introduction:
+- # [Introduction]
 
 <p align="center">
      <img src="images/Network-arch.png">
    </p>
 Spreadsheets are computer applications used to store, analyze, organize and manipulate data in the rows and columns of a grid. The program operates by taking in data, which can be numbers or text, into the cells of tables.
 
-# Functionality
+- # [Functionality]
 
->
 
 - ## [SpreedSheet Header](#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
