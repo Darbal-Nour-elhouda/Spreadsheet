@@ -31,17 +31,17 @@
 
 >
 
-# [SpreedSheet Header](#spreedsheet-header)
+# SpreedSheet Header(#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
    - ### [Private Slots](#private-slots)
    - ### [Pointers](#pointers)
-# [SpreedSheet CPP](#spreedsheet-cpp)
+# SpreedSheet CPP(#spreedsheet-cpp)
 
 
 ## SpreedSheet Header
-`sudo nano /etc/default/isc-dhcp-server`
 
-```#ifndef SPREADSHEET_H
+```c++
+#ifndef SPREADSHEET_H
 #define SPREADSHEET_H
 
 #include <QMainWindow>
