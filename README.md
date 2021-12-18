@@ -197,7 +197,8 @@ void SpreadSheet::setupMainWidget()
 }
 ```
    #### the second "createActions()":
-   where we create the action for each one using "nameAction = new QAction(ActionIcone, "&Action", this)" , if we want add icons for our actions we use "QPixmap ActionIcone(":/new_file.png")" , also we can add shortCut by  "ActionIcone->setShortcut(tr("Ctrl+alphabet"))":
+   where we create the action for each one using "nameAction = new QAction(ActionIcone, "&Action", this)" , if we want add icons for our actions we use
+   "QPixmap ActionIcone(":/new_file.png")" , also we can add shortCut by  "ActionIcone->setShortcut(tr("Ctrl+alphabet"))":
    
 ```c++
 void SpreadSheet::createActions()
@@ -279,6 +280,89 @@ void SpreadSheet::createActions()
    exit = new QAction(exitIcon,"E&xit", this);
    exit->setShortcut(tr("Ctrl+Q"));
 }
+```
+  #### The fourth is "createMenus()":
+here we add Menus ,we have 5 Name menus "File", "Edit" ,"Toosl", "Optins", "Help"  by 
+"NameMenu = menuBar()->addMenu("&Name")" and we add actions by using 
+"NameMenu->addAction(action)":
+
+```c++
+void SpreadSheet::createMenus()
+{
+    // --------  File menu -------//
+    FileMenu = menuBar()->addMenu("&File");
+    FileMenu->addAction(newFile);
+    FileMenu->addAction(open);
+    FileMenu->addAction(save);
+    FileMenu->addAction(saveAs);
+    FileMenu->addSeparator();
+    FileMenu->addAction(exit);
+
+
+    //------------- Edit menu --------/
+    editMenu = menuBar()->addMenu("&Edit");
+    editMenu->addAction(cut);
+    editMenu->addAction(copy);
+    editMenu->addAction(paste);
+    editMenu->addAction(deleteAction);
+    editMenu->addSeparator();
+    auto select = editMenu->addMenu("&Select");
+    select->addAction(row);
+    select->addAction(Column);
+    select->addAction(all);
+
+    editMenu->addAction(find);
+    editMenu->addAction(goCell);
+
+
+
+    //-------------- Toosl menu ------------
+    toolsMenu = menuBar()->addMenu("&Tools");
+    toolsMenu->addAction(recalculate);
+    toolsMenu->addAction(sort);
+
+
+
+    //Optins menus
+    optionsMenu = menuBar()->addMenu("&Options");
+    optionsMenu->addAction(showGrid);
+    optionsMenu->addAction(auto_recalculate);
+
+
+    //----------- Help menu ------------
+    helpMenu = menuBar()->addMenu("&Help");
+    helpMenu->addAction(about);
+    helpMenu->addAction(aboutQt);
+}
+
+void SpreadSheet::createToolBars()
+{
+
+    //Crer une bare d'outils
+    auto toolbar1 = addToolBar("File");
+
+
+    //Ajouter des actions acette bar
+    toolbar1->addAction(newFile);
+    toolbar1->addAction(save);
+    toolbar1->addSeparator();
+    toolbar1->addAction(exit);
+
+
+    //Creer une autre tool bar
+    auto toolbar2  = addToolBar("ToolS");
+    toolbar2->addAction(goCell);
+    auto toolbar3  = addToolBar("ToolS");
+    toolbar3->addAction(find);
+}
+
+void SpreadSheet::updateStatusBar(int row, int col)
+{
+    QString cell{"(%0, %1)"};
+   cellLocation->setText(cell.arg(row+1).arg(col+1));
+
+}
+
 ```
 
 Our Team -[DARBAL nour-elhouda](https://github.com/teamkhaoulanour) -[MZOUDI Khaoula](https://github.com/KhaoulaMzoudi)
