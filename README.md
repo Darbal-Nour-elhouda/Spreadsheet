@@ -31,12 +31,11 @@
 
 >
 
-# SpreedSheet Header
-     (#spreedsheet-header)
+-## SpreedSheet Header(#spreedsheet-header)
    - ### [Protected Functions](#protected-functions)
    - ### [Private Slots](#private-slots)
    - ### [Pointers](#pointers)
-# SpreedSheet CPP(#spreedsheet-cpp)
+-## SpreedSheet CPP(#spreedsheet-cpp)
 
 
 ## SpreedSheet Header
@@ -65,4 +64,12 @@ public:
     SpreadSheet(QWidget *parent = nullptr);
     ~SpreadSheet();
 ```
-
+## Protected Functions
+```c++
+protected:
+    void setupMainWidget();
+    void createActions();
+    void createMenus();
+    void createToolBars();
+    void makeConnexions();
+```
