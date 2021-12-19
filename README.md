@@ -506,6 +506,10 @@ In the end off the functions mentionned before we find the important one the :
 }
 ```
 
+<p align="center">
+     <img src="images/gocell.png">
+   </p>
+
 #### findSlot
  ```c++
 void SpreadSheet::findSlot()
@@ -533,6 +537,10 @@ void SpreadSheet::findSlot()
 
 }
 ```
+<p align="center">
+     <img src="images/find.png">
+   </p>
+   
 
 #### saveSlot
  ```c++
@@ -555,6 +563,8 @@ void SpreadSheet::saveSlot(){
  }
 }
 ```
+
+   
 
 ####  saveContent
  ```c++
@@ -581,6 +591,10 @@ void SpreadSheet::saveContent(QString filename){
 
 }
 ```
+<p align="center">
+     <img src="images/save.png">
+   </p>
+   
 
 ####  loadContent
  ```c++
@@ -660,7 +674,7 @@ spreadsheet->clear();
 setWindowTitle("buffer");
 }
 ```
-
+|     example image              |       new file                 |
 | -------------------------------| ------------------------------ |
 |  <p >                          |   <p>                          |
 | <img src="images/example.png"> |  <img src="images/newfile.png">|
