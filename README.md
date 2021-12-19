@@ -155,7 +155,7 @@ private:
 #endif // SPREADSHEET_H
 ```
   - ## [Spread Sheet Cpp](#Spread-Sheet-Cpp)
-    - ### [The code](#The-code)
+    - ### [The code](#The code)
     - ### [ Functions](#functions)
         - ### [setupMainWidget](#setupMainWidget)
         - ### [createActions](#createActions)
@@ -717,9 +717,14 @@ void SpreadSheet::copyslot()
     }
 }
 ```
-<p align="center">
-     <img src="images/copy.png">
-   </p>
+
+|       basic image               |          new image                |
+| ------------------------------- | --------------------------------- |
+|  <p >                           |   <p>                             |
+| <img src="images/example.png">  |  <img src="images/copy.png">   |
+|   </p>                          |  </p>                             |
+
+
 
 #### pasteslot
  ```c++
@@ -735,10 +740,14 @@ void SpreadSheet::pasteslot()
     }
 }
 ```
-<p align="center">
-     <img src="images/paste.png">
-   </p>
-   
+
+|       basic image               |          new image                |
+| ------------------------------- | --------------------------------- |
+|  <p >                           |   <p>                             |
+| <img src="images/example.png">  |  <img src="images/paste.png">     |
+|   </p>                          |  </p>                             |
+
+
 
 ####  close
  ```c++
