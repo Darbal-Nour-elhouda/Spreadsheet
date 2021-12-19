@@ -44,9 +44,9 @@ Common characteristics of spreadsheet software include built-in support for comp
    </p>
 
   - ## [Spread Sheet Header](#Spread-Sheet-Header)
-    - ### [ The header](#The header)
-    - ### [ Protected Functions](#Protected Functions)
-    - ### [ Private Slots](#Private Slots)
+    - ### [ The header](#The-header)
+    - ### [ Protected Functions](#Protected-Functions)
+    - ### [ Private Slots](#Private-Slots)
     - ### [ Pointers](#Pointers)
 
 
