@@ -207,6 +207,7 @@ statusBar()->addPermanentWidget(cellFormula);
 
 //initier le nom du fichier courant
 currentFile = nullptr;
+
 //mettre le nom de spreedsheet
 setWindowTitle("Buffer");
 
