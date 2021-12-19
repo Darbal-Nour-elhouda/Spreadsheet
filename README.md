@@ -675,11 +675,13 @@ spreadsheet->clear();
 setWindowTitle("buffer");
 }
 ```
-|     example image              |       new file                 |
-| -------------------------------| ------------------------------ |
-|  <p >                          |   <p>                          |
-| <img src="images/example.png"> |  <img src="images/newfile.png">|
-|   </p>                         | </p>                           |
+
+
+|       basic image               |          new image                |
+| ------------------------------- | --------------------------------- |
+|  <p >                           |   <p>                             |
+| <img src="images/example.png">  |  <img src="images/newfile.png">   |
+|   </p>                          |  </p>                             |
 
 
 
