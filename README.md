@@ -95,6 +95,11 @@ private slots:
     void deleteslot();
     void saveSlot();//slot pour repondre a l appel save
     void loadslot();//slot pour repondre a l appel load
+    void recentfile();
+    void selectrow();
+    void copyslot();
+    void cutslot();
+    void pasteslot();
 ```
 ## Pointers:
 ```c++
@@ -128,7 +133,7 @@ private:
     QAction *auto_recalculate;
     QAction *about;
     QAction *aboutQt;
-
+    QAction *recent;
 
     // ---------- Menus ----------
     QMenu *FileMenu;
@@ -320,7 +325,7 @@ void SpreadSheet::createMenus()
 
     editMenu->addAction(find);
     editMenu->addAction(goCell);
-
+    editMenu->addAction(recent);
 
 
     //-------------- Toosl menu ------------
@@ -397,14 +402,12 @@ In the end off the functions mentionned before we find the important one the :
 {
 
    // --------- Connexion for the  select all action ----/
-   connect(all, &QAction::triggered,
-           spreadsheet, &QTableWidget::selectAll);
+   connect(all, &QAction::triggered,spreadsheet, &QTableWidget::selectAll);
 
-   // Connection for the  show grid
-   connect(showGrid, &QAction::triggered,
-           spreadsheet, &QTableWidget::setShowGrid);
+   // ----------Connection for the  show grid---------
+   connect(showGrid, &QAction::triggered,spreadsheet, &QTableWidget::setShowGrid);
 
-   //Connection for the exit button
+   //--------Connection for the exit button----------
    connect(exit, &QAction::triggered, this, &SpreadSheet::close);
 
 
@@ -418,11 +421,27 @@ In the end off the functions mentionned before we find the important one the :
    connect (open,&QAction::triggered, this, &SpreadSheet::loadslot);
    //connection de save slot
    connect(save, &QAction::triggered,this,&SpreadSheet::saveSlot);
-   //conncet del_slot
+   
+   //conncet delete_slot
    connect(deleteAction, &QAction::triggered, this, &SpreadSheet::deleteslot);
+   //conncet cut_slot
+   connect(cut, &QAction ::triggered, this, &SpreadSheet::cutslot);
+   //conncet copy_slot
+   connect(copy, &QAction ::triggered, this, &SpreadSheet::copyslot);
+   //conncet past_slot
+   connect(paste, &QAction ::triggered, this, &SpreadSheet::pastslot);
+   
+   //connect select row
+   connect(row,&QAction::triggered,this,&SpreadSheet::selectrow);
+   connect(Column,&QAction::triggered,this,&SpreadSheet::selectcol);
+  
+  //connect for the recentfile
+   connect(recent,&QAction::triggered,this,&SpreadSheet::recentfile);
+
+   
 }
  ```
-Now we add the implementation of **the slots** :
+Now we add **the slots implementation ** :
  #### 1 "goCellSlo
 
 
