@@ -172,6 +172,7 @@ private:
         - ### [ loadslot](#loadslot)
         - ### [ deleteslot](#deleteslot)
         - ### [ selectrow](#selectrow)
+        - ### [ selectcolumn](#selectcolumn)
         - ### [ newfile](#newfile)
         - ### [ cutslot](#cutslot)
         - ### [ copyslot](#copyslot)
@@ -673,6 +674,19 @@ void SpreadSheet::selectrow(){
    </p> 
    
 
+####  selectcolumn
+ ```c++
+void SpreadSheet::selectcolumn(){
+
+    int A;
+    A=spreadsheet->currentRow();
+    spreadsheet->selectRow(A);
+
+}
+```
+<p align="center">
+     <img src="images/column.png">
+   </p> 
 
 ####  newfile
  ```c++
