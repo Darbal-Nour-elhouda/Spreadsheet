@@ -14,20 +14,20 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-        <li><a href="#Introduction">introduction</a></li>
-        <li><a href="#Features">features</a></li>
-        <li><a href="#SpreedSheet Header">SpreedSheetHeader</a></li>
-        <li><a href="#SpreedSheet cpp">SpreedSheetcpp</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#Spread-Sheet-Header">Spread Sheet tHeader</a></li>
+        <li><a href="#Spread-Sheet-cpp">Spread Sheet cpp</a></li>
   </ol>
 </details>
 
-- # [Introduction](#introduction)
+- # [Introduction](#Introduction)
 Spreadsheets are computer applications used to store, analyze, organize, and manipulate data in the rows and columns of a grid. The program works by inserting data, which can be numbers or text, into the cells of tables. most people think of spreadsheets, they think of data entry and simple calculations. But a modern spreadsheet is more than a financial tool. These apps are a robust way to help collect, organize and analyze important data across different areas of life ,& people use it because they are easy-to-read space.
 <p align="center">
      <img src="images/example1.gif">
    </p>
 
-- # [Features ](#features)
+- # [Features ](#Features)
 Common characteristics of spreadsheet software include built-in support for complex mathematical calculations and formulas, the ability to generate graphs and summary "pivot tables" from data and the ability to customize what types of data are stored in which rows and columns.
 ##  **In our SpreadSheet we obtain an application with:**
 
@@ -43,7 +43,7 @@ Common characteristics of spreadsheet software include built-in support for comp
      <img src="images/logo.png">
    </p>
 
-  - ## [SpreadSheet Header](#SpreadSheetHeader)
+  - ## [Spread Sheet Header](#Spread-Sheet-Header)
     - ### [The header](#The-header)
     - ### [Protected Functions](#protected-functions)
     - ### [Private Slots](#private-slots)
@@ -52,7 +52,7 @@ Common characteristics of spreadsheet software include built-in support for comp
 
 
 # SpreedSheet Header
-## [The header](#The-header)
+## The header
 ```c++
 #ifndef SPREADSHEET_H
 #define SPREADSHEET_H
@@ -77,7 +77,7 @@ public:
     SpreadSheet(QWidget *parent = nullptr);
     ~SpreadSheet();
 ```
-## [Protected Functions](#protected-functions)
+## Protected Functions
 ```c++
 protected:
     void setupMainWidget();
@@ -86,7 +86,7 @@ protected:
     void createToolBars();
     void makeConnexions();
 ```
-## [Private Slots](#private-slots)
+## Private Slots
 ```c++
 private slots:
     void close();
@@ -102,7 +102,7 @@ private slots:
     void cutslot();
     void pasteslot();
 ```
-##  [Pointers](#Pointers)
+##  Pointers
 ```c++
 //Pointers
     void saveContent(QString filename);//methode pour sauvegarder le contenu
