@@ -42,16 +42,16 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
      <img src="images/logo.png">
    </p>
 
-  - ## [SpreadSheet Header:](#spreadsheet-header:)
-    - ### [The header:](#The-header:)
-    - ### [Protected Functions:](#protected-functions:)
-    - ### [Private Slots:](#private-slots:)
-    - ### [Pointers:](#Pointers:)
+  - ## [SpreadSheet Header](#spreadsheet-header)
+    - ### [The header](#The-header)
+    - ### [Protected Functions](#protected-functions)
+    - ### [Private Slots](#private-slots)
+    - ### [Pointers](#Pointers)
 
 
 
-# SpreedSheet Header:
-## The header:
+# SpreedSheet Header
+## The header
 ```c++
 #ifndef SPREADSHEET_H
 #define SPREADSHEET_H
@@ -76,7 +76,7 @@ public:
     SpreadSheet(QWidget *parent = nullptr);
     ~SpreadSheet();
 ```
-## Protected Functions:
+## Protected Functions
 ```c++
 protected:
     void setupMainWidget();
@@ -85,7 +85,7 @@ protected:
     void createToolBars();
     void makeConnexions();
 ```
-## Private Slots:
+## Private Slots
 ```c++
 private slots:
     void close();
@@ -101,7 +101,7 @@ private slots:
     void cutslot();
     void pasteslot();
 ```
-## Pointers:
+## Pointers
 ```c++
 //Pointers
     void saveContent(QString filename);//methode pour sauvegarder le contenu
@@ -153,32 +153,32 @@ private:
 
 #endif // SPREADSHEET_H
 ```
-  - ## [SpreedSheet Cpp:](#spreedsheet-cpp:)
-    - ### [The code:](#The-code:)
-    - ### [ Functions:](#functions:)
-        - ### [setupMainWidget:](#setupMainWidget:)
-        - ### [createActions:](#createActions:)
-        - ### [createMenus:](#createMenus:)
-        - ### [createToolBars:](#createToolBars:)
-        - ### [updateStatusBar:](#updateStatusBar:)
-        - ### [makeConnexions:](#makeConnexions:)
-    - ### [Slots:](#slots:)
-        - ### [goCellSlot:](#goCellSlot:)
-        - ### [findSlot:](#findSlot:)
-        - ### [saveSlot:](#saveSlot:)
-        - ### [saveContent:](#saveContent:)
-        - ### [loadContent:](#loadContent:)
-        - ### [loadslot:](#loadslot:)
-        - ### [deleteslot:](#deleteslot:)
-        - ### [selectrow:](#selectrow:)
-        - ### [newfile:](#newfile:)
-        - ### [cutslot:](#cutslot:)
-        - ### [copyslot:](#copyslot:)
-        - ### [pasteslots:](#pasteslot:)
-        - ### [close:](#close:)
-        - ### [recentfile:](#recentfile:)
-# SpreedSheet Cpp:
- ## The code:
+  - ## [SpreedSheet Cpp](#spreedsheet-cpp)
+    - ### [The code](#The-code)
+    - ### [ Functions](#functions)
+        - ### [setupMainWidget](#setupMainWidget)
+        - ### [createActions](#createActions)
+        - ### [createMenus](#createMenus)
+        - ### [createToolBars](#createToolBars)
+        - ### [updateStatusBar](#updateStatusBar)
+        - ### [makeConnexions](#makeConnexions)
+    - ### [Slots](#slots)
+        - ### [goCellSlot](#goCellSlot)
+        - ### [findSlot](#findSlot)
+        - ### [saveSlot](#saveSlot)
+        - ### [saveContent](#saveContent)
+        - ### [loadContent](#loadContent)
+        - ### [loadslot](#loadslot)
+        - ### [deleteslot](#deleteslot)
+        - ### [selectrow](#selectrow)
+        - ### [newfile](#newfile)
+        - ### [cutslot](#cutslot)
+        - ### [copyslot](#copyslot)
+        - ### [pasteslots](#pasteslot)
+        - ### [close](#close)
+        - ### [recentfile](#recentfile)
+# SpreedSheet Cpp
+ ## The code
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
   ```c++ 
@@ -210,10 +210,10 @@ currentFile = nullptr;
 setWindowTitle("Buffer");
 
 ```
- ## Functions:
+ ## Functions
 Now, it's necessary to implement the functions mentioned before:
 
-   #### setupMainWidget:
+   #### setupMainWidget
 ```c++
 void SpreadSheet::setupMainWidget()
 {
@@ -224,7 +224,7 @@ void SpreadSheet::setupMainWidget()
 
 }
 ```
-   #### createActions:
+   #### createActions
    where we create the action for each one using 
    `nameAction = new QAction(ActionIcone, "&Action", this)` , if we want add icons for our actions we use
 `QPixmap ActionIcone(":/new_file.png")` , also we can add shortCut by
@@ -315,7 +315,7 @@ void SpreadSheet::createActions()
    recent->setShortcut(tr("Ctrl+M"));
 }
 ```
-  #### createMenus:
+  #### createMenus
 here we add Menus ,we have 5 Name menus "File", "Edit" ,"Toosl", "Optins", "Help"  by 
 `NameMenu = menuBar()->addMenu("&Name")`
 and we add actions by using 
@@ -375,7 +375,7 @@ void SpreadSheet::createMenus()
 }
 ```
 
-  #### createToolBars:
+  #### createToolBars
 where we create the toolbars by 
 `auto toolbarName = addToolBar("Name");` and we add for each one the actions by using
 `toolbarName->addAction(action);`
@@ -403,7 +403,7 @@ void SpreadSheet::createToolBars()
     toolbar3->addAction(find);
 }
 ```
-   ##### updateStatusBars:
+   ##### updateStatusBars
 This function is done just if a new cell has been selected in the toolbar.
 ```c++
 void SpreadSheet::updateStatusBar(int row, int col)
@@ -420,7 +420,7 @@ The result:
 
 
 In the end off the functions mentionned before we find the important one the :
-  ####  makeConnexions:
+  ####  makeConnexions
  here we make connexion of the chane of any element in the spreadsheet with the update status barby using
  `connect(action,&QAction::triggered,name,&QTableWidger::actionSlot)`
  
@@ -474,8 +474,8 @@ In the end off the functions mentionned before we find the important one the :
    
 }
  ```
-## The slots :
- ####  goCellSlot:
+## The slots 
+ ####  goCellSlot
  ```c++
  void SpreadSheet::goCellSlot()
 {
@@ -506,7 +506,7 @@ In the end off the functions mentionned before we find the important one the :
 }
 ```
 
-#### findSlot:
+#### findSlot
  ```c++
 void SpreadSheet::findSlot()
 {
@@ -534,7 +534,7 @@ void SpreadSheet::findSlot()
 }
 ```
 
-#### saveSlot:
+#### saveSlot
  ```c++
 void SpreadSheet::saveSlot(){
     //verifier si on a pas un nom de fichier
@@ -556,7 +556,7 @@ void SpreadSheet::saveSlot(){
 }
 ```
 
-####  saveContent:
+####  saveContent
  ```c++
 void SpreadSheet::saveContent(QString filename){
     //pointeur sur un fichier
@@ -582,7 +582,7 @@ void SpreadSheet::saveContent(QString filename){
 }
 ```
 
-####  loadContent:
+####  loadContent
  ```c++
 void SpreadSheet::loadContent(QString filename)
 {
@@ -610,7 +610,7 @@ void SpreadSheet::loadContent(QString filename)
 }
 ```
 
-####  loadslot:
+####  loadslot
  ```c++
 void SpreadSheet::loadslot(){
     QFileDialog D;
@@ -623,7 +623,7 @@ void SpreadSheet::loadslot(){
 }
 ```
 
-####  deleteslot:
+####  deleteslot
  ```c++
 
 void SpreadSheet::deleteslot(){
@@ -633,7 +633,7 @@ void SpreadSheet::deleteslot(){
 }
 ```
 
-####  selectrow:
+####  selectrow
  ```c++
 void SpreadSheet::selectrow(){
 
@@ -646,7 +646,7 @@ void SpreadSheet::selectrow(){
 
 
 
-####  newfile:
+####  newfile
  ```c++
 void SpreadSheet::newfile(){
 
@@ -655,7 +655,7 @@ spreadsheet->clear();
 setWindowTitle("buffer");
 }
 ```
-#### cutslot:
+#### cutslot
 ```c++
 void SpreadSheet::cutslot()
 {
@@ -670,7 +670,7 @@ void SpreadSheet::cutslot()
 }
 ```
 
-####  copyslot:
+####  copyslot
  ```c++
 void SpreadSheet::copyslot()
 {
@@ -685,7 +685,7 @@ void SpreadSheet::copyslot()
 }
 ```
 
-#### pasteslot:
+#### pasteslot
  ```c++
 void SpreadSheet::pasteslot()
 {
@@ -700,7 +700,7 @@ void SpreadSheet::pasteslot()
 }
 ```
 
-####  close:
+####  close
  ```c++
 void SpreadSheet::close()
 {
@@ -712,7 +712,7 @@ void SpreadSheet::close()
 }
 ```
 
-####  recentfile:
+####  recentfile
  ```c++
 void SpreadSheet::recentfile() {
     // obtenir le fichier
