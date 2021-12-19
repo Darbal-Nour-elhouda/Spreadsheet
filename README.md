@@ -648,9 +648,15 @@ void SpreadSheet::deleteslot(){
     spreadsheet->setItem(row, col,new QTableWidgetItem(""));
 }
 ```
-<p align="center">
-     <img src="images/delete.png">
-   </p>
+
+|       basic image               |          new image                |
+| ------------------------------- | --------------------------------- |
+|  <p >                           |   <p>                             |
+| <img src="images/example.png">  |  <img src="images/delete.png">    |
+|   </p>                          |  </p>                             |
+
+
+
 
 ####  selectrow
  ```c++
