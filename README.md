@@ -660,9 +660,14 @@ spreadsheet->clear();
 setWindowTitle("buffer");
 }
 ```
-<p align="center">
-     <img src="images/newfile.png">
-   </p>
+
+| -------------------------------| ------------------------------ |
+|  <p >                          |   <p>                          |
+| <img src="images/example.png"> |  <img src="images/newfile.png">|
+|   </p>                         | </p>                           |
+
+
+
 #### cutslot
 ```c++
 void SpreadSheet::cutslot()
