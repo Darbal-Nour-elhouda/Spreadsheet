@@ -163,8 +163,18 @@ private:
         - ### [updateStatusBar](#updateStatusBar)
         - ### [makeConnexions](#makeConnexions)
     - ### [Slots](#slots)
-    
-
+        - ### [goCellSlot](#goCell-Slot)
+        - ### [findSlot](#find-Slot)
+        - ### [saveSlot](#save-Slot)
+        - ### [saveContent](#save-Content)
+        - ### [loadContent](#load-Content)
+        - ### [makeConnexions](#makeConnexions)
+        - ### [setupMainWidget](#setupMainWidget)
+        - ### [createActions](#createActions)
+        - ### [createMenus](#createMenus)
+        - ### [createToolBars](#createToolBars)
+        - ### [updateStatusBar](#updateStatusBar)
+        - ### [makeConnexions](#makeConnexions)
 
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
