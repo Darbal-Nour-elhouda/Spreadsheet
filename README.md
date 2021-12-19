@@ -16,9 +16,8 @@
   <ol>
         <li><a href="#Introduction">introduction</a></li>
         <li><a href="#Features">Features</a></li>
-            <li><a href="#Features">Features</a></li>
-        <li><a href="#SpreedSheet Header">SpreedSheet Header</a></li>
-        <li><a href="#SpreedSheet cpp">SpreedSheet cpp</a></li>
+        <li><a href="#SpreedSheet Header">SpreedSheetHeader</a></li>
+        <li><a href="#SpreedSheet cpp">SpreedSheetcpp</a></li>
   </ol>
 </details>
 
@@ -44,7 +43,7 @@ Common characteristics of spreadsheet software include built-in support for comp
      <img src="images/logo.png">
    </p>
 
-  - ## [SpreadSheet Header](#spreadsheet-header)
+  - ## [SpreadSheet Header](#SpreadSheetHeader)
     - ### [The header](#The-header)
     - ### [Protected Functions](#protected-functions)
     - ### [Private Slots](#private-slots)
@@ -53,7 +52,7 @@ Common characteristics of spreadsheet software include built-in support for comp
 
 
 # SpreedSheet Header
-## The header
+## [The header](#The-header)
 ```c++
 #ifndef SPREADSHEET_H
 #define SPREADSHEET_H
@@ -78,7 +77,7 @@ public:
     SpreadSheet(QWidget *parent = nullptr);
     ~SpreadSheet();
 ```
-## Protected Functions
+## [Protected Functions](#protected-functions)
 ```c++
 protected:
     void setupMainWidget();
@@ -87,7 +86,7 @@ protected:
     void createToolBars();
     void makeConnexions();
 ```
-## Private Slots
+## [Private Slots](#private-slots)
 ```c++
 private slots:
     void close();
@@ -103,7 +102,7 @@ private slots:
     void cutslot();
     void pasteslot();
 ```
-## Pointers
+##  [Pointers](#Pointers)
 ```c++
 //Pointers
     void saveContent(QString filename);//methode pour sauvegarder le contenu
