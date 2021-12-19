@@ -17,7 +17,7 @@
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#Spread-Sheet-Header">Spread Sheet tHeader</a></li>
-        <li><a href="#Spread-Sheet-cpp">Spread Sheet cpp</a></li>
+        <li><a href="#Spread-Sheet-cpp">Spread Sheet Cpp</a></li>
   </ol>
 </details>
 
@@ -27,7 +27,7 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
      <img src="images/example1.gif">
    </p>
 
-- # [Features ](#Features)
+- # [Features](#Features)
 Common characteristics of spreadsheet software include built-in support for complex mathematical calculations and formulas, the ability to generate graphs and summary "pivot tables" from data and the ability to customize what types of data are stored in which rows and columns.
 ##  **In our SpreadSheet we obtain an application with:**
 
@@ -154,7 +154,7 @@ private:
 
 #endif // SPREADSHEET_H
 ```
-  - ## [SpreedSheet Cpp](#spreedsheet-cpp)
+  - ## [Spread Sheet Cpp](#Spread-Sheet-Cpp)
     - ### [The code](#The-code)
     - ### [ Functions](#functions)
         - ### [setupMainWidget](#setupMainWidget)
