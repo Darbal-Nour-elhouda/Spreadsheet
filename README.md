@@ -15,7 +15,7 @@
   <summary>Table of Contents</summary>
   <ol>
         <li><a href="#Introduction">introduction</a></li>
-        <li><a href="#Features">Features</a></li>
+        <li><a href="#Features">features</a></li>
         <li><a href="#SpreedSheet Header">SpreedSheetHeader</a></li>
         <li><a href="#SpreedSheet cpp">SpreedSheetcpp</a></li>
   </ol>
@@ -27,7 +27,7 @@ Spreadsheets are computer applications used to store, analyze, organize, and man
      <img src="images/example1.gif">
    </p>
 
-- # [Features ](#Features)
+- # [Features ](#features)
 Common characteristics of spreadsheet software include built-in support for complex mathematical calculations and formulas, the ability to generate graphs and summary "pivot tables" from data and the ability to customize what types of data are stored in which rows and columns.
 ##  **In our SpreadSheet we obtain an application with:**
 
