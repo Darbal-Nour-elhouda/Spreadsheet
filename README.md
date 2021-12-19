@@ -406,7 +406,7 @@ void SpreadSheet::createToolBars()
     toolbar3->addAction(find);
 }
 ```
-   ##### updateStatusBars
+   ##### updateStatusBar
 This function is done just if a new cell has been selected in the toolbar.
 ```c++
 void SpreadSheet::updateStatusBar(int row, int col)
