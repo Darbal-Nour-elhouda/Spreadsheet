@@ -679,8 +679,8 @@ void SpreadSheet::selectrow(){
 void SpreadSheet::selectcolumn(){
 
     int A;
-    A=spreadsheet->currentRow();
-    spreadsheet->selectRow(A);
+    A=spreadsheet->currentColumn();
+    spreadsheet->selectColumn(A);
 
 }
 ```
