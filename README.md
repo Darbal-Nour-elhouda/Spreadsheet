@@ -153,8 +153,18 @@ private:
 
 #endif // SPREADSHEET_H
 ```
+  - ## [SpreedSheet Cpp](#spreedsheet-cpp)
+    - ### [The code](#The-code)
+    - ### [ Functions](#functions)
+        - ### [setupMainWidget](#setupMainWidget)
+        - ### [createActions](#createActions)
+        - ### [createMenus](#createMenus)
+        - ### [createToolBars](#createToolBars)
+        - ### [updateStatusBar](#updateStatusBar)
+        - ### [makeConnexions](#makeConnexions)
+    - ### [Slots](#slots)
+    
 
-- ## [SpreedSheet Cpp](#spreedsheet-cpp)
 
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
  
@@ -288,7 +298,7 @@ void SpreadSheet::createActions()
    exit->setShortcut(tr("Ctrl+Q"));
 }
 ```
-  #### The fourth is "createMenus()":
+  #### The third is "createMenus()":
 here we add Menus ,we have 5 Name menus "File", "Edit" ,"Toosl", "Optins", "Help"  by 
 `NameMenu = menuBar()->addMenu("&Name")`
 and we add actions by using 
@@ -348,7 +358,7 @@ void SpreadSheet::createMenus()
 }
 ```
 
-  #### The fifth one is "createToolBars()":
+  #### The fourth one is "createToolBars()":
 where we create the toolbars by 
 `auto toolbarName = addToolBar("Name");` and we add for each one the actions by using
 `toolbarName->addAction(action);`
