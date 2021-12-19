@@ -663,7 +663,8 @@ void SpreadSheet::selectrow(){
 ```
 <p align="center">
      <img src="images/row.png">
-   </p>
+   </p> 
+   
 
 
 ####  newfile
