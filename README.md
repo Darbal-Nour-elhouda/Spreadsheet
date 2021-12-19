@@ -716,6 +716,7 @@ void SpreadSheet::pasteslot()
 <p align="center">
      <img src="images/paste.png">
    </p>
+   
 
 ####  close
  ```c++
@@ -731,6 +732,7 @@ void SpreadSheet::close()
 <p align="center">
      <img src="images/close.png">
    </p>
+   
 ####  recentfile
  ```c++
 void SpreadSheet::recentfile() {
