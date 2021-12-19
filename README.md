@@ -179,6 +179,7 @@ private:
         - ### [ pasteslots](#pasteslot)
         - ### [ close](#close)
         - ### [ recentfile](#recentfile)
+        - ### [ loadcsv](#loadcsv)
 # SpreedSheet Cpp
  ##  The code
 we start by declaring the seting spreadsheat "setupMainWidget()", also we create Actions  by  "createActions()", after we create the tool bar by "createToolBars()" and we make connexions by  "makeConnexions()" , we create the labels for the status bar , besides , we initiate the name of the current file  , in the end we should give the name of the spreadsheet by "setWindowTitle".
@@ -740,11 +741,6 @@ void SpreadSheet::copyslot()
 }
 ```
 
-|       basic image               |          new image                |
-| ------------------------------- | --------------------------------- |
-|  <p >                           |   <p>                             |
-| <img src="images/example.png">  |  <img src="images/copy.png">   |
-|   </p>                          |  </p>                             |
 
 
 
@@ -790,8 +786,8 @@ void SpreadSheet::close()
  ```c++
 void SpreadSheet::recentfile() {
     // obtenir le fichier
-auto b = dynamic_cast<QAction*>(sender());
-    QFile file(b->text());
+auto A = dynamic_cast<QAction*>(sender());
+    QFile file(A->text());
     QString line;
      if(file.open(QIODevice::ReadOnly))
      {
@@ -811,9 +807,27 @@ auto b = dynamic_cast<QAction*>(sender());
 }
 
  ```
+#### loadcsv
+```c++
+void SpreadSheet::loadcsv(QString filename){
+    QFile file(filename);
+    if (file.open(QIODevice::ReadOnly )) {
+        QTextStream in(&file);
 
+ int i=0;
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        auto list = line.split(QChar(';'));
+        for(int j=0;j<list.length();j++){
+        auto contenu=new  QTableWidgetItem (list[j]);
+        spreadsheet->setItem(i,j,contenu);
+        }
+        i++;
+    }
+  }
+}
 
-
+```
 
 
 
