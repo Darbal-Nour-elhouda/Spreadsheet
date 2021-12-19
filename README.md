@@ -632,6 +632,9 @@ void SpreadSheet::deleteslot(){
     spreadsheet->setItem(row, col,new QTableWidgetItem(""));
 }
 ```
+<p align="center">
+     <img src="images/delete.png">
+   </p>
 
 ####  selectrow
  ```c++
@@ -643,7 +646,9 @@ void SpreadSheet::selectrow(){
 
 }
 ```
-
+<p align="center">
+     <img src="images/row.png">
+   </p>
 
 
 ####  newfile
@@ -655,6 +660,9 @@ spreadsheet->clear();
 setWindowTitle("buffer");
 }
 ```
+<p align="center">
+     <img src="images/newfile.png">
+   </p>
 #### cutslot
 ```c++
 void SpreadSheet::cutslot()
@@ -669,6 +677,9 @@ void SpreadSheet::cutslot()
     }
 }
 ```
+<p align="center">
+     <img src="images/cut.png">
+   </p>
 
 ####  copyslot
  ```c++
@@ -684,6 +695,9 @@ void SpreadSheet::copyslot()
     }
 }
 ```
+<p align="center">
+     <img src="images/copy.png">
+   </p>
 
 #### pasteslot
  ```c++
@@ -699,6 +713,9 @@ void SpreadSheet::pasteslot()
     }
 }
 ```
+<p align="center">
+     <img src="images/paste.png">
+   </p>
 
 ####  close
  ```c++
@@ -711,7 +728,9 @@ void SpreadSheet::close()
         qApp->exit();
 }
 ```
-
+<p align="center">
+     <img src="images/close.png">
+   </p>
 ####  recentfile
  ```c++
 void SpreadSheet::recentfile() {
@@ -721,17 +740,17 @@ auto b = dynamic_cast<QAction*>(sender());
     QString line;
      if(file.open(QIODevice::ReadOnly))
      {
-         QTextStream in(&file);
-         while( !in.atEnd())
+     QTextStream in(&file);
+     while( !in.atEnd())
          {
-             line = in.readLine();
-             auto tokens = line.split(QChar(',') );
-             int row = tokens[0].toInt();
-             int col = tokens[1].toInt();
-             spreadsheet->setItem(row, col , new QTableWidgetItem(tokens[2]));
+           line = in.readLine();
+           auto tokens = line.split(QChar(',') );
+           int row = tokens[0].toInt();
+           int col = tokens[1].toInt();
+           spreadsheet->setItem(row, col , new QTableWidgetItem(tokens[2]));
          }
      }
-     // mettre a jour le titre de le fenetre
+     // update the title
      setWindowTitle(*currentFile);
      file.close();
 }
