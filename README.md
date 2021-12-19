@@ -308,6 +308,10 @@ void SpreadSheet::createActions()
    QPixmap exitIcon(":/quit_icon.png");
    exit = new QAction(exitIcon,"E&xit", this);
    exit->setShortcut(tr("Ctrl+Q"));
+   
+   //-------recent-----
+   recent= new QAction( "&Recent", this);
+   recent->setShortcut(tr("Ctrl+M"));
 }
 ```
   #### The third is "createMenus()":
@@ -441,20 +445,26 @@ In the end off the functions mentionned before we find the important one the :
    connect(find, &QAction::triggered, this, &SpreadSheet::findSlot);
 
    connect (open,&QAction::triggered, this, &SpreadSheet::loadslot);
+   
    //connection de save slot
    connect(save, &QAction::triggered,this,&SpreadSheet::saveSlot);
    
    //conncet delete_slot
    connect(deleteAction, &QAction::triggered, this, &SpreadSheet::deleteslot);
+   
    //conncet cut_slot
    connect(cut, &QAction ::triggered, this, &SpreadSheet::cutslot);
+   
    //conncet copy_slot
    connect(copy, &QAction ::triggered, this, &SpreadSheet::copyslot);
+   
    //conncet past_slot
    connect(paste, &QAction ::triggered, this, &SpreadSheet::pastslot);
    
    //connect select row
    connect(row,&QAction::triggered,this,&SpreadSheet::selectrow);
+   
+   //connect select Column
    connect(Column,&QAction::triggered,this,&SpreadSheet::selectcol);
   
   //connect for the recentfile
@@ -463,8 +473,280 @@ In the end off the functions mentionned before we find the important one the :
    
 }
  ```
-Now we add **the slots implementation ** :
- #### 1 "goCellSlo
+## The slots :
+ #### 1 goCellSlot:
+ ```c++
+ void SpreadSheet::goCellSlot()
+{
+    //Creating the dialog
+    GoCell D;
+
+    //Executing the dialog and storing the user response
+    auto reply = D.exec();
+
+    //Checking if the dialog is accepted
+    if(reply == GoCell::Accepted)
+    {
+
+        //Getting the cell text
+        auto cell = D.cell();
+
+        //letter distance
+        int row = cell[0].toLatin1() - 'A';
+        cell.remove(0,1);
+
+        //second coordinate
+        int col =  cell.toInt();
+
+
+        //changing the current cell
+        spreadsheet->setCurrentCell(row, col-1);
+    }
+}
+```
+
+#### 2 findSlot:
+ ```c++
+void SpreadSheet::findSlot()
+{
+
+    FindDialog f;
+     auto reply = f.exec();
+     if(reply == FindDialog::Accepted)
+     {
+
+         auto cellfield = f.textfield();
+
+   for(int i=0;i<spreadsheet->rowCount();i++)
+   {
+       for(int j=0;j<spreadsheet->columnCount();j++)
+       {
+           if(spreadsheet->item(i,j))
+           {
+                if(spreadsheet->item(i,j)->text()==cellfield)
+                      spreadsheet->setCurrentCell( i,  j);
+           }
+       }
+   }
+ }
+
+}
+```
+
+#### 3 saveSlot:
+ ```c++
+void SpreadSheet::saveSlot(){
+    //verifier si on a pas un nom de fichier
+    if(!currentFile)//pointeur non nul
+    {
+    QFileDialog D;
+    auto filename = D.getSaveFileName();
+
+    //changer le nom du fichier
+    currentFile = new QString(filename);
+    i++;
+    if(i<=5)
+        A->append(*currentFile);
+
+    setWindowTitle(filename);
+    //fonction privee pour sauvegarder
+    saveContent(filename);
+ }
+}
+```
+
+#### 4 saveContent:
+ ```c++
+void SpreadSheet::saveContent(QString filename){
+    //pointeur sur un fichier
+    QFile file(filename);
+
+
+    //ouvrir le fichier en mode lecture
+    if(file.open(QIODevice::WriteOnly)){
+        QTextStream out(&file);
+        //Boucle sur les cellules pour sauvegarder leur contenu
+        for(int i=0;i< spreadsheet->rowCount();i++)
+            for(int j=0;j<spreadsheet->columnCount();j++){
+                auto cell = spreadsheet->item(i,j);
+                if (cell){
+                    out << i << "," <<  j << "," << cell->text() << endl;
+
+                }
+            }
+    }
+    //Fermer la connexion avec le fichier
+    file.close();
+
+}
+```
+
+#### 5 loadContent:
+ ```c++
+void SpreadSheet::loadContent(QString filename)
+{
+    //ouvrir le pointeur sur le fichier
+    QFile file (filename);
+
+    if(file.open(QIODevice::ReadOnly)){
+        QTextStream in(&file);
+
+        //parcourir tout le fichier
+         while(!in.atEnd()){
+        QString line;
+        line = in.readLine();
+
+        //separer la ligne par,
+        auto tokens = line.split(QChar(','));
+
+        //Row
+        int row = tokens[0].toInt();
+        int col = tokens[1].toInt();
+        auto cell = new QTableWidgetItem(tokens[2]);
+        spreadsheet->setItem(row,col,cell);
+       }
+    }
+}
+```
+
+#### 6 loadSlot:
+ ```c++
+void SpreadSheet::loadslot(){
+    QFileDialog D;
+    auto filename = D.getOpenFileName();
+    //changer le nom de dichier
+    currentFile= new QString(filename);
+    setWindowTitle(*currentFile);
+     //Fonction pour charger le contenu
+    loadContent(filename);
+}
+```
+
+#### 7 deleteSlot:
+ ```c++
+
+void SpreadSheet::deleteslot(){
+    int row = spreadsheet->currentRow();
+    int col = spreadsheet->currentColumn();
+    spreadsheet->setItem(row, col,new QTableWidgetItem(""));
+}
+```
+
+#### 8 selectrow:
+ ```c++
+void SpreadSheet::selectrow(){
+
+    int A;
+    A=spreadsheet->currentRow();
+    spreadsheet->selectRow(A);
+
+}
+```
+
+#### 9 recentfile:
+ ```c++
+//void SpreadSheet::recentfile(){
+//    class recent R;
+//    QTextStream out(stdout);
+//    QString N;
+
+//for (auto j=0;j<A->length() ;j++ ) {
+//   N+=A->at(j)+"\n";
+//}
+
+//R.recenttext()->setText(N);
+//R.exec();
+//}
+```
+
+#### 10 newfile:
+ ```c++
+void SpreadSheet::newfile(){
+
+spreadsheet->clear();
+ currentFile=nullptr;
+setWindowTitle("buffer");
+}
+void SpreadSheet::cutslot()
+{
+    // get the last child widget which has focus and
+    // try to cast it as line edit
+    QLineEdit* lineEdit = dynamic_cast<QLineEdit*>(focusWidget());
+    if (lineEdit)
+    {
+        // it was a line edit, perform copy
+        lineEdit->cut();
+    }
+}
+```
+
+#### 11 copyslot:
+ ```c++
+void SpreadSheet::copyslot()
+{
+    // get the last child widget which has focus and
+    // try to cast it as line edit
+    QLineEdit* lineEdit = dynamic_cast<QLineEdit*>(focusWidget());
+    if (lineEdit)
+    {
+        // it was a line edit, perform copy
+        lineEdit->copy();
+    }
+}
+```
+
+#### 12 pasteslot:
+ ```c++
+void SpreadSheet::pasteslot()
+{
+    // get the last child widget which has focus and
+    // try to cast it as line edit
+    QLineEdit* lineEdit = dynamic_cast<QLineEdit*>(focusWidget());
+    if (lineEdit)
+    {
+        // it was a line edit, perform copy
+        lineEdit->paste();
+    }
+}
+```
+
+#### 13 close:
+ ```c++
+void SpreadSheet::close()
+{
+
+    auto reply = QMessageBox::question(this, "Exit",
+                                       "Do you really want to quit?");
+    if(reply == QMessageBox::Yes)
+        qApp->exit();
+}
+```
+
+#### 13 recentfile:
+ ```c++
+void SpreadSheet::recentfile() {
+    // obtenir le fichier
+auto b = dynamic_cast<QAction*>(sender());
+    QFile file(b->text());
+    QString line;
+     if(file.open(QIODevice::ReadOnly))
+     {
+         QTextStream in(&file);
+         while( !in.atEnd())
+         {
+             line = in.readLine();
+             auto tokens = line.split(QChar(',') );
+             int row = tokens[0].toInt();
+             int col = tokens[1].toInt();
+             spreadsheet->setItem(row, col , new QTableWidgetItem(tokens[2]));
+         }
+     }
+     // mettre a jour le titre de le fenetre
+     setWindowTitle(*currentFile);
+     file.close();
+}
+
+ ```
 
 
 
